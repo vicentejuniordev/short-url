@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model urls {
+  id           Int       @id @default(autoincrement())
+  slug         String?   @unique @db.VarChar(20)
+  url_original String?
+  created_data DateTime? @db.Date
+}
