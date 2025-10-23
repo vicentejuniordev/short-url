@@ -1,4 +1,4 @@
-
+import prisma from "../lib"
 
 const shortenUrl = (url: string) =>{
     
