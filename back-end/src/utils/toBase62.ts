@@ -1,6 +1,4 @@
-import { reverse } from "dns";
-
-const toBase = (id: number) =>{
+const toBase = async (id: number) =>{
     const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let slug: string = '';
 
@@ -17,4 +15,4 @@ const toBase = (id: number) =>{
 
 }
 
-console.log(toBase(125));
+export default toBase
