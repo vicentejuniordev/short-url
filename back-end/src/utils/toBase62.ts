@@ -1,5 +1,7 @@
+
+export const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const toBase = async (id: number) =>{
-    const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    
     let slug: string = '';
 
     let q = 1;
