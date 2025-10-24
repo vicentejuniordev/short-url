@@ -11,3 +11,5 @@ const decode = async (slug: string)=>{
     }
     return slugDecode
 }
+
+export default decode
