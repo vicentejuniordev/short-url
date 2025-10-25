@@ -3,7 +3,7 @@ import prisma from "../lib";
 const redirectUrl = async (slug: string)=>{
     const urlCode = await decode(slug);
     const urlOrginal = await prisma.urls.findUnique({
-        where:{id: urlCode}
+        where:{id: BigInt(urlCode)}
     })
 
     return urlOrginal?.url_original;

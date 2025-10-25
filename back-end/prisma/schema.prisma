@@ -9,7 +9,7 @@
   }
 
   model urls {
-    id           Int       @id @default(autoincrement())
+    id           BigInt       @id @default(autoincrement())
     slug         String?   @unique @db.VarChar(20)
     url_original String?
     created_data DateTime? @default(now())

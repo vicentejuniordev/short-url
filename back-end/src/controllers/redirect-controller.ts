@@ -8,9 +8,8 @@ const redirect = async (req: Request, res: Response)=>{
         res.status(400).json({error: 'not found'});
     }else{
         const urlOriginal = await redirectUrl(slug);
-        console.log(urlOriginal);
+        res.redirect(301, urlOriginal as string)
     }
-    res.json({message: 'not impelemented'})
 }
 
 export default redirect

@@ -1,15 +1,17 @@
-import { characters } from "./toBase62"
+import { characters } from "./toBase62";
 
-const decode = async (slug: string)=>{
-    let slugDecode: number = 0;
-    const slugSplit = slug.split('').reverse();
-    for(let i = slugSplit.length; i > 0; i--){
-        const ch = slugSplit[i - 1];
-        if (ch === undefined) continue;
-        let index = characters.indexOf(ch); 
-        slugDecode += index * Math.pow(62, i - 1)
-    }
-    return slugDecode
-}
+const decode = async (slug: string) => {
+  let slugDecode = 0;
 
-export default decode
+  for (let i = 0; i < slug.length; i++) {
+    const ch = slug[i];
+    const index = characters.indexOf(ch as string);
+
+    if (index === -1) continue; // ignora char inválido
+    slugDecode = slugDecode * 62 + index;
+  }
+
+  return slugDecode;
+};
+
+export default decode;

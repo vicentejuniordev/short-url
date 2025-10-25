@@ -16,11 +16,11 @@ const shortenUrl = async (url: string) =>{
             id: newUrl.id
         },
         data:{
-            slug: await toBase(newUrl.id)
+            slug: await toBase(Number(newUrl.id))
         }
     })
 
-    return `http://encurtaai.ly/${await toBase(newUrl.id)}`
+    return `http://localhost:3000/${await toBase(Number(newUrl.id))}`
 }
 
 export default shortenUrl
